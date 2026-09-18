@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Santana Painting — licensed and bonded painting contractor serving Laguna Hills and South Orange County. Interior and exterior house painting, cabinets, stucco, and trim. Owner-operated. Free estimates — call (323) 819-3605.">
+<title>Santana Painting</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<style>
+  :root {
+    --paper: #FAF7F2;
+    --paper-deep: #F0EBE2;
+    --ink-dark: #232A2E;
+    --ink-darker: #171C20;
+    --pacific: #2E6C8E;
+    --pacific-bright: #3B85AC;
+    --terracotta: #C2663C;
+    --ink: #2A3034;
+    --ink-soft: #626B71;
+    --line: #E0D9CD;
+    --card: #FFFFFE;
+    --img-bg: #E6E0D5;
+    --on-dark: #F5F1EA;
+    --on-accent: #FFFFFE;
+    --display: "Fraunces", Georgia, serif;
+    --body: "Public Sans", "Segoe UI", Arial, sans-serif;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #191E21;
+      --paper-deep: #13181B;
+      --ink-dark: #E9EDEF;
+      --ink-darker: #0F1316;
+      --pacific: #58A0C4;
+      --pacific-bright: #3B85AC;
+      --terracotta: #D88254;
+      --ink: #E4E8EA;
+      --ink-soft: #99A2A8;
+      --line: #2B3237;
+      --card: #202629;
+      --img-bg: #272E32;
+      --on-dark: #F5F1EA;
+      --on-accent: #0F1316;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #191E21;
+    --paper-deep: #13181B;
+    --ink-dark: #E9EDEF;
+    --ink-darker: #0F1316;
+    --pacific: #58A0C4;
+    --pacific-bright: #3B85AC;
+    --terracotta: #D88254;
+    --ink: #E4E8EA;
+    --ink-soft: #99A2A8;
+    --line: #2B3237;
+    --card: #202629;
+    --img-bg: #272E32;
+    --on-dark: #F5F1EA;
+    --on-accent: #0F1316;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+  a { color: var(--pacific); }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--pacific);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+  img, svg { max-width: 100%; display: block; }
+  img.ph { width: 100%; height: 100%; object-fit: cover; background: var(--img-bg); color: var(--ink-soft); }
+
+  .wrap { max-width: 72rem; margin: 0 auto; padding: 0 1.25rem; }
+  .eyebrow {
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin: 0 0 0.8rem;
+  }
+  h1, h2, h3 { font-family: var(--display); font-weight: 600; color: var(--ink-dark); text-wrap: balance; margin: 0; }
+  h2 { font-size: clamp(1.75rem, 4.8vw, 2.5rem); line-height: 1.14; }
+  h3 { font-size: 1.2rem; line-height: 1.25; }
+  p { margin: 0; }
+  section { padding: clamp(3.2rem, 7vw, 4.6rem) 0; scroll-margin-top: 5.4rem; }
+  .section-intro { max-width: 46em; margin-top: 1rem; color: var(--ink-soft); }
+
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.85rem 1.7rem;
+    border-radius: 4px;
+    text-align: center;
+  }
+  .btn-solid { background: var(--pacific); color: var(--on-accent); }
+  .btn-solid:hover { background: var(--pacific-bright); }
+  .btn-ghost { border: 2px solid currentColor; }
+  @media (max-width: 30rem) { .ctas .btn { flex: 1 1 100%; } }
+
+  /* ---------- Header ---------- */
+  .site-head {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--paper) 94%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  header.site { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.75rem 0; }
+  .brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; color: var(--ink-dark); line-height: 1.1; }
+  .brand .mark {
+    width: 42px; height: 42px; flex: none;
+    background: var(--pacific); color: var(--on-accent);
+    display: grid; place-items: center;
+    font-family: var(--display); font-weight: 700; font-size: 1.25rem;
+    border-radius: 50%;
+  }
+  .brand .name { font-family: var(--display); font-weight: 600; font-size: 1.16rem; white-space: nowrap; }
+  .brand small { display: block; font-family: var(--body); font-weight: 600; font-size: 0.63rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); white-space: nowrap; }
+  nav.top { display: none; gap: 1.2rem; }
+  nav.top a { color: var(--ink); text-decoration: none; font-weight: 600; font-size: 0.92rem; }
+  nav.top a:hover { color: var(--pacific); }
+  .call-btn {
+    display: inline-block; background: var(--ink-dark); color: var(--on-dark);
+    text-decoration: none; font-weight: 700;
+    font-size: 0.94rem; padding: 0.55rem 1.1rem; border-radius: 4px; white-space: nowrap;
+  }
+  .call-btn:hover { background: var(--pacific); }
+  :root[data-theme="dark"] .call-btn { background: var(--pacific); color: var(--on-accent); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .call-btn { background: var(--pacific); color: var(--on-accent); }
+  }
+  @media (max-width: 30rem) {
+    header.site { gap: 0.5rem; }
+    .brand { min-width: 0; }
+    .brand .name { font-size: 0.92rem; }
+    .brand small { font-size: 0.5rem; letter-spacing: 0.07em; white-space: normal; }
+    .brand .mark { width: 32px; height: 32px; font-size: 0.95rem; }
+    .call-btn { font-size: 0.8rem; padding: 0.45rem 0.7rem; }
+  }
+  @media (min-width: 62rem) { nav.top { display: flex; } }
+
+  /* ---------- Hero ---------- */
+  .hero { position: relative; color: var(--on-dark); isolation: isolate; display: grid; }
+  .hero-inner { grid-area: 1 / 1; }
+  .hero .bg { position: absolute; inset: 0; overflow: hidden; }
+  .hero .bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 48%; }
+  .hero .bg::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(200deg, rgba(16,22,26,0.55) 0%, rgba(16,22,26,0.84) 62%, rgba(16,22,26,0.92) 100%);
+    z-index: 1;
+  }
+  .hero-inner { position: relative; z-index: 2; padding: clamp(4rem, 12vw, 7rem) 1.25rem clamp(3rem, 8vw, 4.5rem); max-width: 72rem; margin: 0 auto; width: 100%; }
+  .hero .eyebrow { color: #E8A87C; }
+  .hero h1 { color: #FFFFFE; font-size: clamp(2.1rem, 6.3vw, 3.5rem); line-height: 1.1; max-width: 14em; }
+  .hero h1 em { font-style: normal; color: #8FC4E0; }
+  .hero .lede { max-width: 38em; margin-top: 1.1rem; font-size: 1.1rem; color: #D2D7DB; }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: #FFFFFF14; border: 1px solid #FFFFFF2E;
+    border-radius: 999px; padding: 0.32rem 0.9rem;
+    font-size: 0.85rem; font-weight: 600; color: #E7EBEE;
+  }
+  .ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.7rem; }
+  .ctas .btn-ghost { color: var(--on-dark); }
+  .hero-note { margin-top: 1.3rem; font-size: 0.92rem; color: #99A2A8; }
+
+  /* ---------- Trust strip ---------- */
+  .strip { background: var(--ink-darker); color: var(--on-dark); padding: 1.4rem 0; }
+  .strip-row { display: flex; flex-wrap: wrap; gap: 0.6rem 2.4rem; justify-content: center; text-align: center; }
+  .strip-row span { font-size: 0.96rem; }
+  .strip-row b { color: #8FC4E0; }
+
+  /* ---------- Services ---------- */
+  .svc-grid { display: grid; gap: 1.3rem; margin-top: 2.2rem; grid-template-columns: 1fr; }
+  @media (min-width: 44rem) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 64rem) { .svc-grid { grid-template-columns: repeat(4, 1fr); } }
+  .svc {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 8px; overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .svc .photo { aspect-ratio: 4 / 3; overflow: hidden; }
+  .svc .body { padding: 1.25rem 1.25rem 1.45rem; display: flex; flex-direction: column; gap: 0.45rem; flex: 1; }
+  .svc h3 { font-size: 1.18rem; }
+  .svc p { color: var(--ink-soft); font-size: 0.95rem; flex: 1; }
+
+  /* ---------- Process ---------- */
+  .process { background: var(--paper-deep); }
+  .proc-grid { display: grid; gap: 1.2rem; margin-top: 2.2rem; grid-template-columns: 1fr; }
+  @media (min-width: 44rem) { .proc-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 64rem) { .proc-grid { grid-template-columns: repeat(4, 1fr); } }
+  .step { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 1.5rem 1.4rem; }
+  .step .n {
+    display: inline-grid; place-items: center;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--pacific); color: var(--on-accent);
+    font-family: var(--display); font-weight: 700; font-size: 1.1rem;
+  }
+  .step h3 { margin-top: 0.7rem; font-size: 1.1rem; }
+  .step p { margin-top: 0.45rem; color: var(--ink-soft); font-size: 0.94rem; }
+
+  /* ---------- Why / owner ---------- */
+  .why { background: var(--ink-darker); color: var(--on-dark); }
+  .why h2 { color: var(--on-dark); }
+  .why-split { display: grid; gap: 2.2rem; align-items: center; grid-template-columns: 1fr; }
+  @media (min-width: 56rem) { .why-split { grid-template-columns: 1.05fr 0.95fr; } }
+  .why-copy h2 + p { margin-top: 1.1rem; }
+  .why-copy p { color: #A7B0B6; }
+  .why-copy p + p { margin-top: 1rem; }
+  .why-photo { aspect-ratio: 3 / 4; overflow: hidden; border-radius: 8px; max-height: 480px; }
+  .w-list { list-style: none; margin: 1.4rem 0 0; padding: 0; display: grid; gap: 0.7rem; }
+  .w-list li { display: flex; gap: 0.7rem; align-items: flex-start; color: #D6DBDF; font-size: 0.97rem; }
+  .w-list .chk { flex: none; width: 20px; height: 20px; margin-top: 0.22rem; color: #8FC4E0; }
+
+  /* ---------- Gallery ---------- */
+  .gal-grid { display: grid; gap: 0.95rem; margin-top: 2.2rem; grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 48rem) { .gal-grid { grid-template-columns: repeat(3, 1fr); } }
+  .gal-grid figure { margin: 0; }
+  .gal-grid .shot { aspect-ratio: 4 / 3; overflow: hidden; border-radius: 8px; }
+  .gal-grid figcaption { margin-top: 0.45rem; font-size: 0.85rem; color: var(--ink-soft); }
+
+  /* ---------- Areas ---------- */
+  .areas { background: var(--paper-deep); }
+  .areas-split { display: grid; gap: 2.2rem; align-items: center; grid-template-columns: 1fr; }
+  @media (min-width: 56rem) { .areas-split { grid-template-columns: 1fr 1fr; } }
+  .areas-photo { aspect-ratio: 4 / 3; overflow: hidden; border-radius: 8px; }
+  .areas-copy h2 + p { margin-top: 1.1rem; }
+  .areas-copy p { color: var(--ink-soft); }
+  .areas-copy p + p { margin-top: 0.9rem; }
+  .town-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1.3rem; }
+  .town-chips span {
+    font-weight: 600; font-size: 0.86rem;
+    border: 1px solid var(--line); background: var(--card);
+    border-radius: 999px; padding: 0.32rem 0.9rem; color: var(--ink-soft);
+  }
+
+  /* ---------- Estimate ---------- */
+  .estimate { text-align: center; }
+  .est-card {
+    max-width: 44rem; margin: 2rem auto 0;
+    background: var(--card); border: 1px solid var(--line);
+    border-top: 4px solid var(--terracotta);
+    border-radius: 10px; padding: 2rem 1.6rem;
+  }
+  .est-card .big { font-family: var(--display); font-weight: 700; font-size: clamp(1.7rem, 5.5vw, 2.3rem); color: var(--ink-dark); }
+  .est-card p { margin-top: 0.8rem; color: var(--ink-soft); }
+  .est-card .ctas { justify-content: center; margin-top: 1.4rem; }
+
+  /* ---------- Contact ---------- */
+  .contact-band { position: relative; color: var(--on-dark); text-align: center; isolation: isolate; display: grid; }
+  .contact-band .inner { grid-area: 1 / 1; }
+  .contact-band .bg { position: absolute; inset: 0; overflow: hidden; }
+  .contact-band .bg img { width: 100%; height: 100%; object-fit: cover; }
+  .contact-band .bg::after { content: ""; position: absolute; inset: 0; background: rgba(16,22,26,0.88); z-index: 1; }
+  .contact-band .inner { position: relative; z-index: 2; padding: clamp(3.5rem, 9vw, 5.5rem) 1.25rem; max-width: 72rem; margin: 0 auto; width: 100%; }
+  .contact-band .eyebrow { color: #E8A87C; }
+  .contact-band h2 { color: #FFFFFE; }
+  .contact-band .section-intro { color: #BDC4C9; margin-inline: auto; }
+  .contact-band .ctas { justify-content: center; }
+  .contact-band .big-phone {
+    display: inline-block; font-family: var(--display); font-weight: 700;
+    font-size: clamp(2rem, 8vw, 3rem); color: #FFFFFE;
+    text-decoration: none; margin-top: 1rem; line-height: 1.1;
+  }
+  .contact-band .big-phone:hover { color: #8FC4E0; }
+  .contact-band .fine { margin-top: 1.2rem; font-size: 0.94rem; color: #99A2A8; }
+
+  /* ---------- Footer ---------- */
+  footer.site { background: var(--paper-deep); border-top: 1px solid var(--line); color: var(--ink-soft); padding: 2.5rem 0; text-align: center; font-size: 0.92rem; }
+  footer.site .fbrand { font-family: var(--display); font-weight: 600; font-size: 1.3rem; color: var(--ink-dark); margin-bottom: 0.4rem; }
+  footer.site p { margin-top: 0.3rem; }
+  footer.site a { color: inherit; }
+  footer.site .fine { font-size: 0.78rem; max-width: 54em; margin: 0.9rem auto 0; }
+</style>
+</head>
+<body>
+
+<div class="site-head">
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="#top" aria-label="Santana Painting home">
+        <span class="mark" aria-hidden="true">S</span>
+        <span class="name">Santana Painting<small>Laguna Hills &middot; South Orange County</small></span>
+      </a>
+      <nav class="top" aria-label="Sections">
+        <a href="#services">Services</a>
+        <a href="#process">How it works</a>
+        <a href="#why">Why us</a>
+        <a href="#work">The work</a>
+        <a href="#areas">Areas served</a>
+        <a href="#estimate">Free estimate</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="call-btn" href="tel:+13238193605">(323) 819-3605</a>
+    </header>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ================= 1. HERO ================= -->
+  <section class="hero">
+    <div class="bg">
+      <img src="img/hero-roller.jpg" alt="Paint roller laying a smooth coat of soft blue paint across a wall" loading="eager">
+    </div>
+    <div class="hero-inner">
+      <p class="eyebrow">Painting Contractor &middot; Laguna Hills, California</p>
+      <div class="badge-row">
+        <span class="badge">Licensed &amp; bonded</span>
+        <span class="badge">Owner-operated</span>
+        <span class="badge">Free estimates</span>
+      </div>
+      <h1>Clean lines, honest work, <em>done by the owner.</em></h1>
+      <p class="lede">Santana Painting is an owner-operated painting contractor serving Laguna Hills and South Orange County. Interiors, exteriors, cabinets, and stucco — prepped properly and finished the way it should be, by the same person who quoted the job.</p>
+      <div class="ctas">
+        <a class="btn btn-solid" href="tel:+13238193605">Call (323) 819-3605</a>
+        <a class="btn btn-ghost" href="#estimate">Get a free estimate</a>
+      </div>
+      <p class="hero-note">Serving Laguna Hills, Mission Viejo, Aliso Viejo, Lake Forest &amp; nearby</p>
+    </div>
+  </section>
+
+  <!-- ================= TRUST STRIP ================= -->
+  <div class="strip" role="note" aria-label="Key facts">
+    <div class="wrap strip-row">
+      <span><b>Licensed</b> California contractor</span>
+      <span><b>$25,000</b> surety bond</span>
+      <span><b>Owner</b> on every job</span>
+      <span><b>Free</b> written estimates</span>
+    </div>
+  </div>
+
+  <!-- ================= 2. SERVICES ================= -->
+  <section id="services">
+    <div class="wrap">
+      <p class="eyebrow">What we paint</p>
+      <h2>Interior, exterior, and everything in between.</h2>
+      <p class="section-intro">Residential painting for homes, condos, and rentals across South Orange County — one room or the whole house.</p>
+      <div class="svc-grid">
+        <div class="svc">
+          <div class="photo"><img class="ph" src="img/interior-rolling.jpg" alt="Painter rolling a fresh coat onto an interior wall" loading="lazy"></div>
+          <div class="body">
+            <h3>Interior painting</h3>
+            <p>Walls, ceilings, doors, and trim. Furniture covered, floors protected, edges cut straight, and the room put back together when we're done.</p>
+          </div>
+        </div>
+        <div class="svc">
+          <div class="photo"><img class="ph" src="img/stucco-wall.jpg" alt="Sunlit stucco exterior wall of a home" loading="lazy"></div>
+          <div class="body">
+            <h3>Exterior &amp; stucco</h3>
+            <p>Stucco, siding, fascia, and eaves — washed, patched, and coated with paint rated for the coastal sun and salt air.</p>
+          </div>
+        </div>
+        <div class="svc">
+          <div class="photo"><img class="ph" src="img/kitchen-cabinets.jpg" alt="Kitchen with freshly painted white cabinets" loading="lazy"></div>
+          <div class="body">
+            <h3>Cabinets &amp; millwork</h3>
+            <p>Kitchen and bath cabinets refinished to a smooth, hard-wearing finish — a fraction of the cost of replacing them.</p>
+          </div>
+        </div>
+        <div class="svc">
+          <div class="photo"><img class="ph" src="img/accent-wall.jpg" alt="Living room with a deep blue accent wall and gold fixtures" loading="lazy"></div>
+          <div class="body">
+            <h3>Accent walls &amp; color</h3>
+            <p>Not sure on the color? Bring us the room and we'll help you get to a finish you'll still like in five years.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3. PROCESS ================= -->
+  <section id="process" class="process">
+    <div class="wrap">
+      <p class="eyebrow">How it works</p>
+      <h2>Four steps, no surprises.</h2>
+      <p class="section-intro">You'll know the price and the plan before a single drop cloth comes out of the truck.</p>
+      <div class="proc-grid">
+        <div class="step">
+          <div class="n">1</div>
+          <h3>Walk the job</h3>
+          <p>We come look at the actual space, talk through what you want, and take the measurements ourselves.</p>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <h3>Written estimate</h3>
+          <p>A clear, itemized quote — surfaces, prep, coats, and materials. Free, and no pressure to sign.</p>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <h3>Prep and protect</h3>
+          <p>The part that decides how the finish looks: masking, patching, sanding, caulking, and priming before any color goes on.</p>
+        </div>
+        <div class="step">
+          <div class="n">4</div>
+          <h3>Paint and walk through</h3>
+          <p>Coats applied properly, site cleaned up, and a final walk-through together before we call it finished.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4. WHY US ================= -->
+  <section id="why" class="why">
+    <div class="wrap why-split">
+      <div class="why-copy">
+        <p class="eyebrow" style="color:#E8A87C">Why Santana Painting</p>
+        <h2>You hire the painter, not a sales rep.</h2>
+        <p>Plenty of painting outfits send a salesman to quote and a rotating crew to do the work. Here the person who looks at your job is the person holding the brush — so nothing gets lost between the estimate and the finish.</p>
+        <p>Being small means we take the jobs bigger companies won't bother with, and it means our name is attached to every wall we touch.</p>
+        <ul class="w-list">
+          <li><svg class="chk" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>Licensed California painting contractor</li>
+          <li><svg class="chk" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>$25,000 contractor surety bond in place</li>
+          <li><svg class="chk" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>One point of contact from quote to cleanup</li>
+          <li><svg class="chk" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>Small jobs and single rooms welcome</li>
+        </ul>
+      </div>
+      <div class="why-photo">
+        <img class="ph" src="img/prep-work.jpg" alt="Painter on a work platform coating a ceiling with drop cloths laid below" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 5. THE WORK ================= -->
+  <section id="work">
+    <div class="wrap">
+      <p class="eyebrow">The work</p>
+      <h2>The finish is in the prep.</h2>
+      <p class="section-intro">Anyone can put paint on a wall. What separates a job that looks good for a decade from one that peels in two years is what happens before the first coat.</p>
+      <div class="gal-grid">
+        <figure>
+          <div class="shot"><img class="ph" src="img/living-room.jpg" alt="Bright living room with freshly painted walls in warm white" loading="lazy"></div>
+          <figcaption>Clean, even walls in a bright interior</figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img class="ph" src="img/accent-wall.jpg" alt="Deep blue painted accent wall behind a leather sofa" loading="lazy"></div>
+          <figcaption>Color done with confidence</figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img class="ph" src="img/kitchen-cabinets.jpg" alt="White painted kitchen cabinetry with new hardware" loading="lazy"></div>
+          <figcaption>Cabinets refinished, not replaced</figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img class="ph" src="img/spanish-home.jpg" alt="Spanish-style stucco home with white walls and a tile roof" loading="lazy"></div>
+          <figcaption>Stucco exteriors built for the sun</figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img class="ph" src="img/prep-work.jpg" alt="Painter working overhead from a platform" loading="lazy"></div>
+          <figcaption>Ceilings, high walls, and hard access</figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img class="ph" src="img/interior-rolling.jpg" alt="Roller applying a smooth coat to an interior wall" loading="lazy"></div>
+          <figcaption>Even coats, straight lines</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 6. AREAS SERVED ================= -->
+  <section id="areas" class="areas">
+    <div class="wrap areas-split">
+      <div class="areas-photo">
+        <img class="ph" src="img/socal-home.jpg" alt="Southern California home with white stucco walls and a tile roof" loading="lazy">
+      </div>
+      <div class="areas-copy">
+        <p class="eyebrow">Areas served</p>
+        <h2>Laguna Hills and South Orange County.</h2>
+        <p>We're based in Laguna Hills and work throughout South County — the tract homes off Moulton, the condos around Nellie Gail, and everything between the 5 and the coast.</p>
+        <p>South County homes have their own quirks: stucco that chalks in the sun, HOA color approvals, and coastal air that's hard on exterior paint. We paint for those conditions, not a generic spec.</p>
+        <div class="town-chips" aria-label="Areas served">
+          <span>Laguna Hills</span><span>Mission Viejo</span><span>Aliso Viejo</span><span>Lake Forest</span>
+          <span>Laguna Niguel</span><span>Laguna Woods</span><span>Irvine</span><span>Rancho Santa Margarita</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 7. FREE ESTIMATE ================= -->
+  <section id="estimate">
+    <div class="wrap estimate">
+      <p class="eyebrow">No cost, no pressure</p>
+      <h2>Find out what your project costs.</h2>
+      <div class="est-card">
+        <div class="big">Free written estimates</div>
+        <p>Tell us the rooms or the square footage and roughly what you're after. We'll come out, look at the real condition of the surfaces, and put a clear number in writing — with no obligation to book.</p>
+        <div class="ctas">
+          <a class="btn btn-solid" href="tel:+13238193605">Call for your estimate</a>
+          <a class="btn btn-ghost" style="color:var(--ink-dark)" href="sms:+13238193605">Text us a photo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 8. CONTACT ================= -->
+  <section id="contact" class="contact-band">
+    <div class="bg">
+      <img src="img/spanish-home.jpg" alt="Spanish-style home exterior" loading="lazy">
+    </div>
+    <div class="inner">
+      <p class="eyebrow">Get in touch</p>
+      <h2>Let's talk about your project.</h2>
+      <p class="section-intro">A room, a whole interior, or the outside of the house — call or text and we'll get you a price.</p>
+      <a class="big-phone" href="tel:+13238193605">(323) 819-3605</a>
+      <div class="ctas" style="margin-top:1.3rem">
+        <a class="btn btn-solid" href="tel:+13238193605">Call now</a>
+        <a class="btn btn-ghost" href="sms:+13238193605">Send a text</a>
+      </div>
+      <p class="fine">Serving Laguna Hills &amp; South Orange County &middot; Licensed &amp; bonded</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="fbrand">Santana Painting</div>
+    <p>Interior &amp; exterior painting &middot; Serving Laguna Hills and South Orange County</p>
+    <p><a href="tel:+13238193605">(323) 819-3605</a></p>
+    <p class="fine">Licensed California painting contractor with a $25,000 surety bond. Photographs are representative of residential painting work, via Unsplash, not photographs of specific completed projects. Scope, color, and pricing confirmed in a free written estimate before any work begins.</p>
+  </div>
+</footer>
+
+</body>
+</html>
